@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeBanking LoL | crear prestamo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="shortcut icon" href="./Style/Img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./Style/css/loan-aplicattion.css">
+  <link rel="stylesheet" href="./Style/css/header.css">
+  <link rel="stylesheet" href="./Style/css/footer.css">
+</head>
+<body id="app">
+  <header class="sticky">
+    <div class="header-blue">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand aH" href="#"> <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 500 500" xml:space="preserve">
+              <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
+              <g>
+                <path fill="#fff"
+                  d="M250.4,0.8C112.7,0.8,1,112.4,1,250.2c0,137.7,111.7,249.4,249.4,249.4c137.7,0,249.4-111.7,249.4-249.4
+                  C499.8,112.4,388.1,0.8,250.4,0.8z M383.8,326.3c-62,0-101.4-14.1-117.6-46.3c-17.1-34.1-2.3-75.4,13.2-104.1
+                  c-22.4,3-38.4,9.2-47.8,18.3c-11.2,10.9-13.6,26.7-16.3,45c-3.1,20.8-6.6,44.4-25.3,62.4c-19.8,19.1-51.6,26.9-100.2,24.6l1.8-39.7		c35.9,1.6,59.7-2.9,70.8-13.6c8.9-8.6,11.1-22.9,13.5-39.6c6.3-42,14.8-99.4,141.4-99.4h41L333,166c-12.6,16-45.4,68.2-31.2,96.2	c9.2,18.3,41.5,25.6,91.2,24.2l1.1,39.8C390.5,326.2,387.1,326.3,383.8,326.3z" />
+              </g>
+            </svg></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#" @Click.prevent="LogOut()">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./accounts.html">Cuentas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./card.html">Cartas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./loan-aplicattion.html">Prestamos</a>
+              </li>
+            </ul>
+            <form class="form-inline" target="_self">
+              <div class="form-group"><input class="form-control search-field" type="search" name="search"
+                  id="search-field"></div>
+            </form><span class="navbar-text"></span><a class="btn btn-light action-button" role="button" href="#"
+              @Click.prevent="LogOut()">Salir</a>
+          </div>
+        </div>
+    </div>
+    </nav>
+  </header>
+    
+
+    <main>
+        <div class="seccionPrestamo">
+
+
+        <div class="plan-card">
+            <h2>{{prestamoHipotecario.name}}<span>para compras/trabajo</span></h2>
+            <div class="etiquet-price">
+                <p>{{prestamoHipotecario.maxAmount}}</p>
+                <div></div>
+            </div>
+            <div class="benefits-list">
+                <ul>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Deposito Inmediato</span></li>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Pago en cuotas</span></li>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Cuotas hasta {{prestamoHipotecario.payments}}</span></li>
+                </ul>
+            </div>
+            <div class="button-get-plan">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Hipotecario" @Click="abrirPrestamoHipotecario()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-rocket">
+                        <path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"></path>
+                    </svg>
+                    <span>SOLICITAR PRESTAMO</span>
+                </button>
+            </div>
+        </div>
+        
+
+        <div class="plan-card">
+            <h2>{{prestamoPersonal.name}}<span>para compras/trabajo</span></h2>
+            <div class="etiquet-price">
+                <p>{{prestamoPersonal.maxAmount}}</p>
+                <div></div>
+            </div>
+            <div class="benefits-list">
+                <ul>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Deposito Inmediato</span></li>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Pago en cuotas</span></li>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Cuotas hasta {{prestamoPersonal.payments}}</span></li>
+                </ul>
+            </div>
+            <div class="button-get-plan">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Personal"  @Click="abrirPrestamoPersonal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-rocket">
+                        <path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"></path>
+                    </svg>
+                    <span>SOLICITAR PRESTAMO</span>
+                </button>
+            </div>
+        </div>
+        
+
+        <div class="plan-card">
+            <h2>{{prestamoAutomotriz.name}}<span>para compras/trabajo</span></h2>
+            <div class="etiquet-price">
+                <p>{{prestamoAutomotriz.maxAmount}}</p>
+                <div></div>
+            </div>
+            <div class="benefits-list">
+                <ul>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Deposito Inmediato</span></li>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Pago en cuotas</span></li>
+                    <li><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M243.8 339.8C232.9 350.7 215.1 350.7 204.2 339.8L140.2 275.8C129.3 264.9 129.3 247.1 140.2 236.2C151.1 225.3 168.9 225.3 179.8 236.2L224 280.4L332.2 172.2C343.1 161.3 360.9 161.3 371.8 172.2C382.7 183.1 382.7 200.9 371.8 211.8L243.8 339.8zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
+                        </svg><span>Cuotas hasta {{prestamoAutomotriz.payments}}</span></li>
+                </ul>
+            </div>
+            <div class="button-get-plan">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Automotriz"  @Click="abrirPrestamoAutomotriz()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-rocket">
+                        <path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"></path>
+                    </svg>
+                    <span>SOLICITAR PRESTAMO</span>
+                </button>
+            </div>
+        </div>
+        </div>
+        <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="Hipotecario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Hipotecario" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Prestamo Hipotecario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        
+        
+        <div class="modal-body">
+          <form class="form" method="POST">
+            <fieldset>
+
+
+            <div class="form__radios">
+                <div class="form__radio">
+                  <label for="amount">Monto maximo a solicitar: {{modificarSaldo(prestamoHipotecario.maxAmount)}}</label>
+                  <div class="input-group mb-3">
+                    
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">{{modificarSaldo(amount)}}</span>
+                    <input value="amount" v-model="amount" name="payment-method" type="number" class="form-control" aria-label="Dollar amount">
+                  </div>
+                </div>
+              </div>
+              <div class="form__group field gap-5 p-5 text-dark">
+
+
+                <label for="cuentaDestino" class="textoLabel">Seleccione la cuenta a depositar</label>
+                <select class="form-select" aria-label="Default select example" v-model="cuentaDestino">
+                    <option>Open this select menu</option>
+                    <option :value="cuenta.number" v-for="cuenta in cuentas">{{cuenta.number}}</option>
+                  </select>
+
+
+                      <label for="cuotasPedidas" class="textoLabel">Seleccione las cuotas</label>
+                      <select class="form-select" aria-label="Default select example" v-model="cuotasPedidas">
+                          <option>Open this select menu</option>
+                          <option :value="prestamos" v-for="prestamos in cuotasHipoterico">{{prestamos}}</option>
+                        </select>
+                </div>
+              </fieldset>
+          </form>
+
+          <div>
+            <h2>Saldo total con intereses (20%) {{modificarSaldo(saldoInteres())}}</h2>
+            <div>
+              <h2>{{cuotasPedidas}} cuotas cada una con un precio de {{modificarSaldo(cuotas())}}</h2>
+            </div>
+          </div>
+
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @Click="cerrarModal()">Cerrar</button>
+          <button type="button" class="btn btn-primary" @Click="pedirPrestamo()">Pedir prestamo</button>
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="modal fade" id="Personal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Personal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Prestamo Personal</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        
+        
+        <div class="modal-body">
+          <form class="form" method="POST">
+            <fieldset>
+
+
+            <div class="form__radios">
+                <div class="form__radio">
+                  <label for="amount">Monto maximo a solicitar: {{prestamoPersonal.maxAmount}}</label>
+                  <div class="input-group mb-3">
+                    
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">{{modificarSaldo(amount)}}</span>
+                    <input value="amount" v-model="amount" name="payment-method" type="number" class="form-control" aria-label="Dollar amount">
+                  </div>
+                </div>
+              </div>
+              <div class="form__group field gap-5 p-5 text-dark">
+
+
+                <label for="cuentaDestino" class="textoLabel">Seleccione la cuenta a depositar</label>
+                <select class="form-select" aria-label="Default select example" v-model="cuentaDestino">
+                    <option>Open this select menu</option>
+                    <option :value="cuenta.number" v-for="cuenta in cuentas">{{cuenta.number}}</option>
+                  </select>
+
+
+                      <label for="cuotasPedidas" class="textoLabel">Seleccione las cuotas</label>
+                      <select class="form-select" aria-label="Default select example" v-model="cuotasPedidas">
+                          <option>Open this select menu</option>
+                          <option :value="prestamos" v-for="prestamos in cuotasPersonal">{{prestamos}}</option>
+                        </select>
+                </div>
+              </fieldset>
+          </form>
+
+          <div>
+            <h2>Saldo total con intereses (10%) {{modificarSaldo(saldoInteres())}}</h2>
+            <div>
+              <h2>{{cuotasPedidas}} cuotas cada una con un precio de {{modificarSaldo(cuotas())}}</h2>
+            </div>
+          </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @Click="cerrarModal()">Cerrar</button>
+          <button type="button" class="btn btn-primary" @Click="pedirPrestamo()">Pedir prestamo</button>
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="modal fade" id="Automotriz" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="Automotriz" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Prestamo Automotriz</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        
+        
+        <div class="modal-body">
+          <form class="form" method="POST">
+            <fieldset>
+
+
+
+            <div class="form__radios">
+                <div class="form__radio">
+                  <label for="amount">Monto maximo a solicitar: {{prestamoAutomotriz.maxAmount}}</label>
+                  <div class="input-group mb-3">
+                    
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">{{modificarSaldo(amount)}}</span>
+                    <input value="amount" v-model="amount" name="payment-method" type="number" class="form-control" aria-label="Dollar amount">
+                  </div>
+                </div>
+              </div>
+              <div class="form__group field gap-5 p-5 text-dark">
+
+
+                <label for="cuentaDestino" class="textoLabel">Seleccione la cuenta a depositar</label>
+                <select class="form-select" aria-label="Default select example" v-model="cuentaDestino">
+                    <option>Open this select menu</option>
+                    <option :value="cuenta.number" v-for="cuenta in cuentas">{{cuenta.number}}</option>
+                  </select>
+
+
+                      <label for="cuotasPedidas" class="textoLabel">Seleccione las cuotas</label>
+                      <select class="form-select" aria-label="Default select example" v-model="cuotasPedidas">
+                          <option>Open this select menu</option>
+                          <option :value="prestamos" v-for="prestamos in cuotasAutomotriz">{{prestamos}}</option>
+                        </select>
+                </div>
+              </fieldset>
+          </form>
+          <div>
+            <h2>Saldo total con intereses (15%) {{modificarSaldo(saldoInteres())}}</h2>
+            <div>
+              <h2>{{cuotasPedidas}} cuotas cada una con un precio de {{modificarSaldo(cuotas())}}</h2>
+            </div>
+          </div>
+
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @Click="cerrarModal()">Cerrar</button>
+          <button type="button" class="btn btn-primary" @Click="pedirPrestamo()">Pedir prestamo</button>
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </main>
+
+
+    <div>
+
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 106, 0, 0.97)" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(54,60,63,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(54,60,63,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#e75309f6" />
+          </g>
+        </svg>
+      </div>
+      <footer class="pie">
+        <div class="grupo1">
+          <div class="box">
+            <h4>¡Contactanos!</h4>
+            <p>De lunes A viernes de 06 a 19 hrs.</p>
+            <p>Centro de Atención al Cliente:</p>
+            <a href="toCall:0810-666-4444"> <span class="material-symbols-outlined">
+                call
+              </span> 0810-666-4444</a>
+            <!-- <p>Denuncias Mastercard (crédito)</p>
+                  <a href=""> <span class="material-symbols-outlined">
+                          call
+                      </span> (011) 4340-5500</a> -->
+            <p>Acercate A Nuestra Sucursal:</p>
+            <a href=""> <span class="material-symbols-outlined">
+                location_on
+              </span> Rivadavia 789 CABA</a>
+            <p>Envienos Un Email!!</p>
+            <a href=""> <span class="material-symbols-outlined">
+                mail
+              </span> HomeBanking@gmail.com.ar</a>
+          </div>
+          <div class="box">
+            <h4>Informacion Legal</h4>
+            <p>Entra al Inicio para Ver mas </p>
+          </div>
+          <div class="box boxForm">
+            <h4>¡Suscribete!</h4>
+            <p>Enterate de todas las novedades y beneficios que tenemos para vos.</p>
+          </div>
+        </div>
+        <div class="grupo2">
+          <small>©CopyRight; 2022 <b>MindHub Brother's</b> - Todos Derechos Reservados.</small>
+          <div>
+            <a href="#"><span class="material-symbols-outlined">
+                arrow_upward
+              </span>Volver Arriba<span class="material-symbols-outlined">
+                arrow_upward
+              </span> </a>
+          </div>
+        </div>
+    
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="loan-aplicattion.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.cuerpo{
+    background-color: #DAF7DC;
+}
+
+.tabla{
+    border: 5px red;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.tbody{
+    border: 1rem red;
+}
+
+.hover:hover{
+    background-color: red;
+}

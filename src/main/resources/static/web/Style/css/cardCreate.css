@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+h1,h2,h3{
+    font-family: 'Exo 2', sans-serif;
+}
+
+p{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+label{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+input{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+body{
+  background-color: #FBAB7E;
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  
+  }
+
+  .logo {
+    width:50px;
+    fill:rgb(233, 80, 9);
+    padding-right:auto;
+    display:inline-block;
+    vertical-align: middle;
+  }
+
+  .headerAccount{
+    background: #203A43;
+
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.headerAccount> li, a, button{
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.headerAccount>.material-symbols-outlined {
+    color: #FF4A1C;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+    color: #FF4A1C;
+    text-shadow: 1px 1px 5px red;
+}
+
+.headerAccount a span{
+    padding: 9px 25px;
+    background-color: #FF4A1C; 
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    
+}
+
+
+
+
+/* card create */
+
+main{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contenedorForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.labelForm{
+  margin-bottom: 1rem;
+}
+
+.textoLabel, option{
+  font-family: 'Exo 2', sans-serif;
+  font-size: large;
+  font-weight: 600;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background: #203a43cb;
+/*   background-color: var(--darkgray); */
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+
+
+
+
+
+
+
+.uiverse {
+  position: relative;
+  background: #133f68e5;
+  color: rgb(230, 226, 29);
+  text-shadow: 1px 1px 7px red;
+  padding: 15px;
+  margin: 30px;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.uiverse:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+svg:hover span,
+svg:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+.uiverse,
+.uiverse .tooltip,
+.uiverse .tooltip::before {
+  transition: all 0.5s ease 0s;
+}
+
+
+.uiverse:hover,
+.uiverse:hover .tooltip,
+.uiverse:hover .tooltip::before {
+  background: linear-gradient(320deg, rgb(231, 122, 19), rgb(0, 60, 255));
+  color: #160d0d;
+  box-shadow: 1px 1px 7px red;
+}
+
+
+
+
+
+
+
+
+
+
+.columna{
+  /* justify-content-center flex-column align-items-center */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+.card {
+  width: 320px;
+  height: 190px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+}
+
+.card__part {
+  box-shadow: 1px 1px 1px 1px #aaa3a3;
+  top: 0;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  display: inline-block;
+  width: 320px;
+  height: 190px;
+  background-image: none,
+  linear-gradient(
+      to right bottom,
+      #2b1415,
+      #200e0f,
+      #0e0507,
+      #591ca8,
+      #7a1e86
+    ); /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+
+.credito{
+  background-image: url(../Img/card.jfif)
+}
+
+.debito{
+  background-image: url(../Img/tarjetaDebito.jfif)
+}
+
+.card__front {
+  padding: 18px;
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+}
+
+.card__back {
+  padding: 18px 0;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+}
+
+.card__black-line {
+  margin-top: 5px;
+  height: 38px;
+  background-color: #303030;
+}
+
+.card__logo {
+  height: 16px;
+}
+
+.card__front-logo {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+.card__square {
+  border-radius: 5px;
+  height: 30px;
+}
+
+.card_numer {
+  display: block;
+  width: 100%;
+  word-spacing: 4px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card__space-75 {
+  width: 75%;
+  float: left;
+}
+
+.card__space-25 {
+  width: 25%;
+  float: left;
+}
+
+.card__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+}
+
+.card__info {
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #FF4A1C;
+  text-shadow: 1px 1px 5px red;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card__back-content {
+  padding: 15px 15px 0;
+}
+.card__secret--last {
+  color: #303030;
+  text-align: right;
+  margin: 0;
+  font-size: 14px;
+}
+
+.card-text{
+  font-size: smaller;
+  padding-top: 1rem;
+}
+
+.card__secret {
+  padding: 5px 12px;
+  background-color: #fff;
+  position: relative;
+}
+
+.card__secret:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  height: calc(100% + 6px);
+  width: calc(100% - 42px);
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ededed,
+    #ededed 5px,
+    #f9f9f9 5px,
+    #f9f9f9 10px
+  );
+}
+
+.card__back-logo {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.card__back-square {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.card:hover .card__front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+.card:hover .card__back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+
+.colorCardaGold{
+  font-size: large;
+  font-weight: 600;
+  color: #face09 !important;
+  text-shadow: 2px 2px 7px rgb(186, 199, 4) !important;
+}
+
+.colorCardaTitanim{
+  font-size: large;
+  font-weight: 600;
+  color: #508096 !important;
+  text-shadow: 2px 2px 7px rgb(92, 197, 192) !important;
+}
+
+.colorCardaSilver{
+  font-size: large;
+  font-weight: 600;
+  color: #561a88 !important;
+  text-shadow: 2px 2px 7px rgb(207, 212, 198) !important;
+}
+
+
+@media screen and (max-width:768px) and (min-width:320px){
+  main{
+    display: flex;
+    flex-direction: column !important;
+    margin: auto;
+  }
+  .contenedorForm .secitionseparador{
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+}
+@media screen and (max-width:1024px) and (min-width:768px){
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}

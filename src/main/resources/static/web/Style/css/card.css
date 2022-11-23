@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,900&family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+h1,h2{
+    font-family: 'Exo 2', sans-serif;
+    
+}
+
+p{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+label{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+input{
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+body{
+  background-color: #FBAB7E;
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+  background-attachment: fixed;
+  background-size: cover;
+  }
+
+
+
+/* Encabezado Principal */
+
+
+.headerAccount{
+    background: #203A43;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.headerAccount> li, a, button{
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.headerAccount>.material-symbols-outlined {
+    color: #FF4A1C;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+.logo {
+  width:50px;
+  fill:rgb(233, 80, 9);
+  padding-right:auto;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+    color: #FF4A1C;
+    text-shadow: 1px 1px 5px red;
+}
+
+.headerAccount a span{
+    padding: 9px 25px;
+    background-color: #FF4A1C; 
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    
+}
+
+
+
+.noTarjetas{
+  font-size: larger;
+  font-weight: 600;
+  font-family: 'Exo 2', sans-serif;
+  color: rgb(18, 221, 235);
+  text-shadow: 2px 2px 2px rgb(189, 12, 12);
+  padding-top: 1rem;
+}
+.nombreCartas{
+  padding-top: 30px;
+  padding-bottom: 130px;
+
+}
+
+.picado{
+  padding-top: 10px;
+  position: absolute;
+  top: 20%;
+}
+
+.picado2{
+  padding-top: 10px;
+  position: absolute;
+  top: 20%;
+}
+
+
+.buttonCard {
+  display: flex;
+  align-items: center;
+  color: #000;
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  position: relative;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: monospace;
+  transition: linear .3s;
+  
+}
+
+.buttonCard:hover {
+  color: #FF4A1C;
+  text-shadow: 1px 1px 5px red;
+}
+
+.buttonCard::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(calc(100% + 4px));
+  width: 45px;
+  height: 45px;
+  background-color: #352319;
+  border-radius: 50px;
+  transition: transform .25s .25s cubic-bezier(0, 0, .5, 2), width .25s cubic-bezier(0, 0, .5, 2);
+  z-index: -1;
+}
+
+.buttonCard:hover::before {
+  width: 100%;
+  transform: translateY(-50%) translateX(-18px);
+  transition: transform .25s cubic-bezier(0,0,.5,2);
+}
+
+
+
+/* MAIN MAIN MAIN */
+
+main{
+    min-height: 60vh;
+}
+
+
+.wtf{
+    color: #f80a0a;
+}
+
+.logoCart{
+  background-color: red;
+  border-radius: 50%;
+}
+
+.card {
+  width: 320px;
+  height: 190px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+}
+
+.card__part {
+  box-shadow: 1px 1px 1px 1px #aaa3a3;
+  top: 0;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  display: inline-block;
+  width: 320px;
+  height: 190px;
+  background-image: none,
+  linear-gradient(
+      to right bottom,
+      #2b1415,
+      #200e0f,
+      #0e0507,
+      #c55b14,
+      #ff7300
+    ); /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+
+.credito{
+  background-image: url(../Img/card.jfif)
+}
+
+.debito{
+  background-image: url(../Img/tarjetaDebito.jfif)
+}
+
+.card__front {
+  padding: 18px;
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+}
+
+.card__back {
+  padding: 18px 0;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+}
+
+.card__black-line {
+  margin-top: 5px;
+  height: 38px;
+  background-color: #303030;
+}
+
+.card__logo {
+  height: 16px;
+}
+
+.card__front-logo {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+.card__square {
+  border-radius: 5px;
+  height: 30px;
+}
+
+.card_numer {
+  display: block;
+  width: 100%;
+  word-spacing: 4px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card__space-75 {
+  width: 75%;
+  float: left;
+}
+
+.card__space-25 {
+  width: 25%;
+  float: left;
+}
+
+.card__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+}
+
+.card__info {
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 18px;
+  color: #FF4A1C;
+  text-shadow: 2px 2px 8px red;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card__back-content {
+  padding: 15px 15px 0;
+}
+.card__secret--last {
+  color: #303030;
+  text-align: right;
+  margin: 0;
+  font-size: 14px;
+}
+
+.card-text{
+  font-size: smaller;
+  padding-top: 1rem;
+}
+
+.card__secret {
+  padding: 5px 12px;
+  background-color: #fff;
+  position: relative;
+}
+
+.card__secret:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  height: calc(100% + 6px);
+  width: calc(100% - 42px);
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ededed,
+    #ededed 5px,
+    #f9f9f9 5px,
+    #f9f9f9 10px
+  );
+}
+
+.card__back-logo {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.card__back-square {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.card:hover .card__front {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+
+.card:hover .card__back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+
+.colorCardaGold{
+  font-size: large;
+  font-weight: 600;
+  color: #face09 !important;
+  text-shadow: 2px 2px 7px rgb(186, 199, 4) !important;
+}
+
+.colorCardaTitanim{
+  font-size: large;
+  font-weight: 600;
+  color: #508096 !important;
+  text-shadow: 2px 2px 7px rgb(92, 197, 192) !important;
+}
+
+.colorCardaSilver{
+  font-size: large;
+  font-weight: 600;
+  color: #561a88 !important;
+  text-shadow: 2px 2px 7px rgb(207, 212, 198) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:768px) and (min-width:320px){
+
+  .card__info{
+
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 10px;
+  }
+
+
+  .picado{
+    padding-top: 10px;
+    position: absolute;
+    top: 20%;
+  }
+  
+  .picado2{
+    padding-top: 10px;
+    position: absolute;
+    top: 55%;
+  }
+      .logo{
+        width:50px;
+        height: 50px;
+        padding: none !important;
+        display:inline-block;
+        vertical-align: left;
+      }
+      .Div1{
+        width: 100%;
+        padding-bottom: 1rem;
+      }
+      .Div2{
+        width: 90%;
+        padding: 20px;
+        margin: auto;
+      }
+      .card__part {
+        box-shadow: 1px 1px 1px 1px #aaa3a3;
+        top: 0;
+        position: absolute;
+        z-index: 1000;
+        left: 0;
+        display: inline-block;
+        width: 280px;
+        height: 190px;
+        background-image: url(../Img/card.jfif),
+          linear-gradient(
+            to right bottom,
+            #fd696b,
+            #fa616e,
+            #f65871,
+            #f15075,
+            #ec4879
+          ); /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 8px;
+      
+        -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -ms-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+      }
+      
+      .card__front {
+        padding: 18px;
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+      }
+      
+      .card__back {
+        padding: 18px 0;
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+      }
+      .card {
+        width: 280px;
+        height: 190px;
+        padding: auto;
+      }
+    
+      .our_solution_category .solution_cards_box {
+        flex: auto;
+      }
+      main{
+        min-height: 90vh;
+      }
+      .headerIndex .titulo{
+        text-align: center;
+        font-size: 85px;
+        color: #f88323;
+        text-shadow:1px 1px 1px #203A43 ;
+        margin: auto;
+      }
+
+}
+@media screen and (max-width:1024px) and (min-width:768px){
+
+      main{
+        min-height: 90vh;
+      }
+    .container{
+      margin: 2em auto;
+      max-width: 75em;
+    }
+}
+@media screen and (min-width: 1024px) {
+  }

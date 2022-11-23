@@ -1,0 +1,313 @@
+.modal-body {
+    display: flex;
+    padding: 0;
+    border-radius: 4rem;
+    font-family: 'PT Sans', sans-serif;
+    
+  }
+  
+  .modal-content {
+    border-radius: 4rem;
+    width: 90%;
+    background: #fc4a1a !important; 
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a) !important; 
+    background: linear-gradient(to right, #f7b733, #fc4a1a) !important; 
+    font-family:'Source Sans Pro', sans-serif !important;
+    -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+    -moz-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+    box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content h1, .modal-content h2, .modal-content h3 {
+      text-align: center;
+  }
+  .modal-content h1 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+  
+  .modal-content h2 {
+      font-size: 1.1em;
+  }
+  .modal-content h3 {
+    font-size: .8em;
+    letter-spacing: 2px;
+  }
+  form {
+      font-size: .8em;
+  }
+  .column {
+    flex: 50%;
+    padding: 10px;
+  }
+  
+  .column#main {
+    flex: 75%;
+    padding: 50px;
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  
+  #secondary {
+    background-color: #F9BC35;
+    border-radius: 0 4rem 4rem 0;
+    text-align: center;
+  }
+  
+  #main .form-control {
+    border-radius: 0;
+    font-size: .9em;
+  }
+  
+  
+  
+  .btn-primary {
+    border-color: rgba( 255, 255, 255, 0);
+    background: #f1da36; /* Old browsers */
+  background: -moz-linear-gradient(left, #f1da36 0%, #fca86c 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #f1da36 0%,#fca86c 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #f1da36 0%,#fca86c 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+  
+  .btn-primary:hover {
+    border-color: rgba( 255, 255, 255, 0);
+  }
+  
+  #main .btn-primary {
+    width: 100%;
+  }
+  #secondary .btn-primary {
+    background: #f8f9fa4f;
+    color: #000;
+  }
+  .modal-body label {
+    margin-bottom: 0;
+  }
+  
+  .sec-content {
+    margin-top: 85%;
+  }
+  
+  .formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .formulario__label {
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .formulario__grupo-input {
+    position: relative;
+  }
+  
+  .formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+  }
+  
+  .formulario__input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+  }
+  
+  .formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+  }
+  
+  .formulario__input-error-activo {
+    display: block;
+  }
+  
+  .formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+  }
+  
+  .formulario__checkbox {
+    margin-right: 10px;
+  }
+  
+  .formulario__grupo-terminos, 
+  .formulario__mensaje,
+  .formulario__grupo-btn-enviar {
+    grid-column: span 2;
+  }
+  
+  .formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+  }
+  
+  .formulario__mensaje-activo {
+    display: block;
+  }
+  
+  .formulario__mensaje p {
+    margin: 0;
+  }
+  
+  .formulario__grupo-btn-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+  }
+  
+  .formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+  }
+  
+  .formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+  }
+  
+  .formulario__mensaje-exito-activo {
+    display: block;
+  }
+  
+  /* ----- -----  Estilos para Validacion ----- ----- */
+  .formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+  }
+  
+  .formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+  }
+  
+  .formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+  }
+  
+  .formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+  }
+  
+  
+  /* ----- -----  Mediaqueries ----- ----- */
+  @media screen and (max-width: 800px) {
+    .formulario {
+      grid-template-columns: 1fr;
+    }
+  
+    .formulario__grupo-terminos, 
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar {
+      grid-column: 1;
+    }
+  
+    .formulario__btn {
+      width: 100%;
+    }
+  }
+  
+  
+  @media screen and (max-width:768px) and (min-width:320px){
+    .modal-content{
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      padding: auto;
+      
+      
+    }
+    .form-group{
+      margin: 1rem;
+    }
+    .modal-body{
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      min-height: 600px;
+      
+    }
+    .modal{
+      width: 95vw;
+      justify-content: center;
+      height: 600px;
+      
+    }
+  
+    .column#main {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      padding: auto;
+    }
+  }
+  
+  @media screen and (max-width:1024px) and (min-width:768px){
+    .modal-content{
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      padding: auto;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+    .form-group{
+      margin: 1rem;
+    }
+    .modal-body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      
+    }
+    .modal{
+      width: 95vw;
+      justify-content: center;
+      align-items: center;
+      min-height: 600px;
+    
+    }
+  
+    .column#main {
+      display: flex;
+      flex-direction: column;
+    }
+  }

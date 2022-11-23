@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeBanking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="cuerpo">
+    <header class="container text-center p-3">
+      <h1 class="m-3">Lista HomeBanking</h1>
+    </header>
+    <main id="app">
+        <section>
+            <div class="d-flex  flex-column align-items-center container justify-content-end gap-3">
+                <form v-on:submit.prevent="agregarUsuario">
+                    <div class="mb-3">
+                        <label for="primerNombre" class="col-form-label form-label">Nombre</label>
+                        <input type="text" class="form-control" name="primerNombre" id="primerNombre" v-model="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="col-form-label form-label">Apellido</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido" v-model="apellido" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label form-label">Email</label>
+                        <input class="form-control" name="email" id="email" v-model="email" required>
+                    </div>
+                    <button @click="Click" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+            <div class="align-items-center container justify-content-center">
+                <table class="table table-dark">
+                    <tbody class="tbody">
+                    <tr id="picado">
+                        <th>Clientes</th>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th class="col-3">email</th>
+                    </tr>
+                        <tr v-for="client of clientes" v:bind:key="id">
+                            <th>{{ client.primerNombre }}</td>
+                            <th> {{client.apellido}}</td>
+                            <th> {{client.email}}</td>
+                            <td><button class="btn btn-outline-warning" v-on:click="editarUsuario">Editar</button></td>
+                            <td><button class="btn btn-outline-danger" v-on:click="QuitarUsuario(client)">Eliminar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        <section>
+
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="manager.js"></script>
+</body>
+</html>

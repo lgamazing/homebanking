@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeBanking LoL | Transaccion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Style/css/header.css">
+    <link rel="stylesheet" href="./Style/css/footer.css">
+    <link rel="stylesheet" href="./Style/css/transfer.css">
+</head>
+<body id="app">
+
+  <div class="sticky">
+    <div class="header-blue">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand aH" href="#">        <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve">
+                <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283" />
+                <g><path fill="#fff"
+                d="M250.4,0.8C112.7,0.8,1,112.4,1,250.2c0,137.7,111.7,249.4,249.4,249.4c137.7,0,249.4-111.7,249.4-249.4
+                C499.8,112.4,388.1,0.8,250.4,0.8z M383.8,326.3c-62,0-101.4-14.1-117.6-46.3c-17.1-34.1-2.3-75.4,13.2-104.1
+                c-22.4,3-38.4,9.2-47.8,18.3c-11.2,10.9-13.6,26.7-16.3,45c-3.1,20.8-6.6,44.4-25.3,62.4c-19.8,19.1-51.6,26.9-100.2,24.6l1.8-39.7		c35.9,1.6,59.7-2.9,70.8-13.6c8.9-8.6,11.1-22.9,13.5-39.6c6.3-42,14.8-99.4,141.4-99.4h41L333,166c-12.6,16-45.4,68.2-31.2,96.2	c9.2,18.3,41.5,25.6,91.2,24.2l1.1,39.8C390.5,326.2,387.1,326.3,383.8,326.3z" />
+                </g>
+                </svg></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./accounts.html">Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./card.html">Cards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./loan-aplicattion.html">Prestamos</a>
+              </li>
+            </ul>
+            <form class="form-inline" target="_self">
+                <div class="form-group"><input class="form-control search-field" type="search" name="search" id="search-field"></div>
+            </form><span class="navbar-text"></span><a class="btn btn-light action-button" role="button" href="#" @Click.prevent="LogOut()">Sign Out</a></div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="card text-center justify-content-center shaodw-lg  card-1 border-0 bg-white px-sm-2">
+                    <div class="card-body show  ">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Transferencias</h3>
+                                <p class="fs-3"> Que hacer ? <span class=" ml-1 cursor-pointer"> Solo elija donde quiere hacer su transferencia</span> </p>
+                            </div>
+                        </div>
+                        <div class="radio-group row justify-content-between text-center a">
+
+                            <div class="col-auto mr-sm-2 mx-1 card-block  py-0 text-center radio botonxD ">
+                              <div class="flex-row ">
+                                <div class="col ">
+                                  <div class="pic "> 
+                                    <button type="button" class="btn "  data-bs-toggle="modal" href="#exampleModalTogglee"  ><img class="irc_mut img-fluid" src="https://i.imgur.com/6r0XCez.png" width="100" height="100"> </button>
+                                   </div>
+                                  <p class="fs-5">Cuenta propia</p>
+                              </div>
+                              </div>
+                            </div>
+                            <div class="col-auto ml-sm-2 mx-1 card-block  py-0 text-center radio botonxD ">
+
+                                <div class="flex-row ">
+                                  <div class="col ">
+                                    <div class="pic "> 
+                                      <button type="button" class="btn "  data-bs-toggle="modal" href="#exampleModalToggle"  ><img class="irc_mut img-fluid" src="https://i.imgur.com/6r0XCez.png" width="100" height="100"> </button>
+                                     </div>
+                                    <p class="fs-5">Cuenta de Terceros</p>
+                                </div>
+                                </div>
+                          </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <p class="text fs-5">Una forma rapida de hacer transacciones</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalTogglee" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Primer parte</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="iphone">
+                  <header class="header">
+                    <h1>Seleccione una cuenta</h1>
+                  </header>
+                
+                  <form class="form" method="POST" >
+                    <fieldset>
+                      <legend>Cuentas</legend>
+                
+                      <div class="form__radios" v-for="cuenta in cuentas">
+                        <div class="form__radio cntr">
+                          <label  class="btn-radio">
+                            <input :value="cuenta.number" v-model="cuentaOrigen" name="payment-method" type="radio"  name="radio-grp">
+                            <svg width="20px" height="20px" viewBox="0 0 20 20">
+                              <circle cx="10" cy="10" r="9"></circle>
+                              <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                              <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+                            </svg>
+                            <span>{{cuenta.number}}</span>
+                          </label>
+
+                        </div>
+                      </div>
+                      <div>
+
+                      </div>
+                    </fieldset>
+                
+                    <div>
+                      <h2>Saldo actual</h2>
+                      
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td><i class="fas fa-usd-circle"></i>{{buscarCuenta(cuentaOrigen)}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                
+                  
+                </div>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                
+                  <symbol id="icon-shopping-bag" viewBox="0 0 24 24">
+                    <path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z" />
+                  </symbol>
+                  <symbol id="icon-visa" viewBox="0 0 504 504">
+                    <path d="m184.8 324.4 25.6-144h40l-24.8 144z" fill="#3c58bf" />
+                    <path d="m184.8 324.4 32.8-144h32.8l-24.8 144z" fill="#293688" />
+                    <path d="m370.4 182c-8-3.2-20.8-6.4-36.8-6.4-40 0-68.8 20-68.8 48.8 0 21.6 20 32.8 36 40s20.8 12 20.8 18.4c0 9.6-12.8 14.4-24 14.4-16 0-24.8-2.4-38.4-8l-5.6-2.4-5.6 32.8c9.6 4 27.2 8 45.6 8 42.4 0 70.4-20 70.4-50.4 0-16.8-10.4-29.6-34.4-40-14.4-7.2-23.2-11.2-23.2-18.4 0-6.4 7.2-12.8 23.2-12.8 13.6 0 23.2 2.4 30.4 5.6l4 1.6z" fill="#3c58bf" />
+                    <path d="m370.4 182c-8-3.2-20.8-6.4-36.8-6.4-40 0-61.6 20-61.6 48.8 0 21.6 12.8 32.8 28.8 40s20.8 12 20.8 18.4c0 9.6-12.8 14.4-24 14.4-16 0-24.8-2.4-38.4-8l-5.6-2.4-5.6 32.8c9.6 4 27.2 8 45.6 8 42.4 0 70.4-20 70.4-50.4 0-16.8-10.4-29.6-34.4-40-14.4-7.2-23.2-11.2-23.2-18.4 0-6.4 7.2-12.8 23.2-12.8 13.6 0 23.2 2.4 30.4 5.6l4 1.6z" fill="#293688" />
+                    <path d="m439.2 180.4c-9.6 0-16.8.8-20.8 10.4l-60 133.6h43.2l8-24h51.2l4.8 24h38.4l-33.6-144zm-18.4 96c2.4-7.2 16-42.4 16-42.4s3.2-8.8 5.6-14.4l2.4 13.6s8 36 9.6 44h-33.6z" fill="#3c58bf" />
+                    <path d="m448.8 180.4c-9.6 0-16.8.8-20.8 10.4l-69.6 133.6h43.2l8-24h51.2l4.8 24h38.4l-33.6-144zm-28 96c3.2-8 16-42.4 16-42.4s3.2-8.8 5.6-14.4l2.4 13.6s8 36 9.6 44h-33.6z" fill="#293688" />
+                    <path d="m111.2 281.2-4-20.8c-7.2-24-30.4-50.4-56-63.2l36 128h43.2l64.8-144h-43.2z" fill="#3c58bf" />
+                    <path d="m111.2 281.2-4-20.8c-7.2-24-30.4-50.4-56-63.2l36 128h43.2l64.8-144h-35.2z" fill="#293688" />
+                    <path d="m0 180.4 7.2 1.6c51.2 12 86.4 42.4 100 78.4l-14.4-68c-2.4-9.6-9.6-12-18.4-12z" fill="#ffbc00" />
+                    <path d="m0 180.4c51.2 12 93.6 43.2 107.2 79.2l-13.6-56.8c-2.4-9.6-10.4-15.2-19.2-15.2z" fill="#f7981d" />
+                    <path d="m0 180.4c51.2 12 93.6 43.2 107.2 79.2l-9.6-31.2c-2.4-9.6-5.6-19.2-16.8-23.2z" fill="#ed7c00" />
+                    <g fill="#051244">
+                      <path d="m151.2 276.4-27.2-27.2-12.8 30.4-3.2-20c-7.2-24-30.4-50.4-56-63.2l36 128h43.2z" />
+                      <path d="m225.6 324.4-34.4-35.2-6.4 35.2z" />
+                      <path d="m317.6 274.8c3.2 3.2 4.8 5.6 4 8.8 0 9.6-12.8 14.4-24 14.4-16 0-24.8-2.4-38.4-8l-5.6-2.4-5.6 32.8c9.6 4 27.2 8 45.6 8 25.6 0 46.4-7.2 58.4-20z" />
+                      <path d="m364 324.4h37.6l8-24h51.2l4.8 24h38.4l-13.6-58.4-48-46.4 2.4 12.8s8 36 9.6 44h-33.6c3.2-8 16-42.4 16-42.4s3.2-8.8 5.6-14.4" />
+                    </g>
+                  </symbol>
+                </svg>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#exampleModalTogglee2" data-bs-toggle="modal">Seguir con el Pago</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalTogglee2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Segunda Parte</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2>Seleccione la cuenta destino.</h2>
+            <div class="form__radios">
+              <div class="form__radio gap-5" >
+                <template  v-for="cuentaaas in cuentas" class="d-flex flex-column cntr">
+                  <label v-if="cuentaaas.number != cuentaOrigen" class="btn-radio">
+                    <input :value="cuentaaas.number" v-model="cuentaDestino" name="payment-method" type="radio"  name="radio-grp">
+                    <svg width="20px" height="20px" viewBox="0 0 20 20">
+                      <circle cx="10" cy="10" r="9"></circle>
+                      <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                      <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+                    </svg>
+                    <span>{{cuentaaas.number}}</span>
+                  </label>
+                </template>
+              </div>
+            </div>
+            <div class="form__radios">
+              <div class="form__radio">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <span class="input-group-text">{{modificarSaldo(amount)}}</span>
+                  <input value="amount" v-model="amount" name="payment-method" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                </div>
+              </div>
+            </div>
+            <div class="form__group field gap-5 p-5 text-dark">
+              <input type="input" class="form__field" placeholder="Name" v-model="description" value="description"required />
+              <label for="name" class="form__label">Descripcion</label>
+            </div>
+            <div>
+              <button @Click.prevent="hacerTransaccion()" class="button button--full" type="submit"><svg class="icon">
+                  <use xlink:href="#icon-shopping-bag" />
+                </svg>Hacer transaccion</button>
+            </div>
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#exampleModalTogglee" data-bs-toggle="modal">Volver atras</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+
+
+
+
+
+
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Primer parte</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="iphone">
+                    <header class="header">
+                      <h1>Seleccione una cuenta</h1>
+                    </header>
+                  
+                    <form class="form" method="POST" >
+                      <fieldset>
+                        <legend>Cuentas</legend>
+                  
+                        <div class="form__radios" v-for="cuenta in cuentas">
+                          <div class="form__radio cntr">
+                            <label  class="btn-radio">
+                              <input :value="cuenta.number" v-model="cuentaOrigen" name="payment-method" type="radio"  name="radio-grp">
+                              <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                <circle cx="10" cy="10" r="9"></circle>
+                                <path d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z" class="inner"></path>
+                                <path d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z" class="outer"></path>
+                              </svg>
+                              <span>{{cuenta.number}}</span>
+                            </label>
+
+                          </div>
+                        </div>
+                        <div>
+
+                        </div>
+                      </fieldset>
+                  
+                      <div>
+                        <h2>Saldo actual</h2>
+                        
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td><i class="fas fa-usd-circle"></i>{{buscarCuenta(cuentaOrigen)}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  
+                    
+                  </div>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+                  
+                    <symbol id="icon-shopping-bag" viewBox="0 0 24 24">
+                      <path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z" />
+                    </symbol>
+                    <symbol id="icon-visa" viewBox="0 0 504 504">
+                      <path d="m184.8 324.4 25.6-144h40l-24.8 144z" fill="#3c58bf" />
+                      <path d="m184.8 324.4 32.8-144h32.8l-24.8 144z" fill="#293688" />
+                      <path d="m370.4 182c-8-3.2-20.8-6.4-36.8-6.4-40 0-68.8 20-68.8 48.8 0 21.6 20 32.8 36 40s20.8 12 20.8 18.4c0 9.6-12.8 14.4-24 14.4-16 0-24.8-2.4-38.4-8l-5.6-2.4-5.6 32.8c9.6 4 27.2 8 45.6 8 42.4 0 70.4-20 70.4-50.4 0-16.8-10.4-29.6-34.4-40-14.4-7.2-23.2-11.2-23.2-18.4 0-6.4 7.2-12.8 23.2-12.8 13.6 0 23.2 2.4 30.4 5.6l4 1.6z" fill="#3c58bf" />
+                      <path d="m370.4 182c-8-3.2-20.8-6.4-36.8-6.4-40 0-61.6 20-61.6 48.8 0 21.6 12.8 32.8 28.8 40s20.8 12 20.8 18.4c0 9.6-12.8 14.4-24 14.4-16 0-24.8-2.4-38.4-8l-5.6-2.4-5.6 32.8c9.6 4 27.2 8 45.6 8 42.4 0 70.4-20 70.4-50.4 0-16.8-10.4-29.6-34.4-40-14.4-7.2-23.2-11.2-23.2-18.4 0-6.4 7.2-12.8 23.2-12.8 13.6 0 23.2 2.4 30.4 5.6l4 1.6z" fill="#293688" />
+                      <path d="m439.2 180.4c-9.6 0-16.8.8-20.8 10.4l-60 133.6h43.2l8-24h51.2l4.8 24h38.4l-33.6-144zm-18.4 96c2.4-7.2 16-42.4 16-42.4s3.2-8.8 5.6-14.4l2.4 13.6s8 36 9.6 44h-33.6z" fill="#3c58bf" />
+                      <path d="m448.8 180.4c-9.6 0-16.8.8-20.8 10.4l-69.6 133.6h43.2l8-24h51.2l4.8 24h38.4l-33.6-144zm-28 96c3.2-8 16-42.4 16-42.4s3.2-8.8 5.6-14.4l2.4 13.6s8 36 9.6 44h-33.6z" fill="#293688" />
+                      <path d="m111.2 281.2-4-20.8c-7.2-24-30.4-50.4-56-63.2l36 128h43.2l64.8-144h-43.2z" fill="#3c58bf" />
+                      <path d="m111.2 281.2-4-20.8c-7.2-24-30.4-50.4-56-63.2l36 128h43.2l64.8-144h-35.2z" fill="#293688" />
+                      <path d="m0 180.4 7.2 1.6c51.2 12 86.4 42.4 100 78.4l-14.4-68c-2.4-9.6-9.6-12-18.4-12z" fill="#ffbc00" />
+                      <path d="m0 180.4c51.2 12 93.6 43.2 107.2 79.2l-13.6-56.8c-2.4-9.6-10.4-15.2-19.2-15.2z" fill="#f7981d" />
+                      <path d="m0 180.4c51.2 12 93.6 43.2 107.2 79.2l-9.6-31.2c-2.4-9.6-5.6-19.2-16.8-23.2z" fill="#ed7c00" />
+                      <g fill="#051244">
+                        <path d="m151.2 276.4-27.2-27.2-12.8 30.4-3.2-20c-7.2-24-30.4-50.4-56-63.2l36 128h43.2z" />
+                        <path d="m225.6 324.4-34.4-35.2-6.4 35.2z" />
+                        <path d="m317.6 274.8c3.2 3.2 4.8 5.6 4 8.8 0 9.6-12.8 14.4-24 14.4-16 0-24.8-2.4-38.4-8l-5.6-2.4-5.6 32.8c9.6 4 27.2 8 45.6 8 25.6 0 46.4-7.2 58.4-20z" />
+                        <path d="m364 324.4h37.6l8-24h51.2l4.8 24h38.4l-13.6-58.4-48-46.4 2.4 12.8s8 36 9.6 44h-33.6c3.2-8 16-42.4 16-42.4s3.2-8.8 5.6-14.4" />
+                      </g>
+                    </symbol>
+                  </svg>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Seguir con el Pago</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Pago 2.</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h2>Seleccione la cuenta destino.</h2>
+              <div class="form__radios">
+                <div class="form__radio gap-5" >
+                  <div   class="d-flex flex-column cntr">
+                    <div class="form__group field gap-5 p-5 text-dark">
+                      <input type="input" class="form__field" placeholder="Name" v-model="cuentaDestino" value="cuentaDestino" required />
+                      <label for="name" class="form__label">Numero de cuenta</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__radios">
+                <div class="form__radio">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <span class="input-group-text">{{modificarSaldo(amount)}}</span>
+                    <input value="amount" v-model="amount" name="payment-method" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                  </div>
+                </div>
+              </div>
+              <div class="form__group field gap-5 p-5 text-dark">
+                <input type="input" class="form__field" placeholder="Name" v-model="description" value="description"required />
+                <label for="name" class="form__label">Descripcion</label>
+              </div>
+              <div>
+                <button @Click.prevent="hacerTransaccion()" class="button button--full" type="submit"><svg class="icon">
+                    <use xlink:href="#icon-shopping-bag" />
+                  </svg>Hacer transaccion</button>
+              </div>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Volver atras</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</main>
+
+
+ <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 106, 0, 0.97)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(54,60,63,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(54,60,63,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#e75309f6" />
+      </g>
+    </svg>
+  </div>
+  <footer class="pie">
+    <div class="grupo1">
+      <div class="box">
+        <h4>¡Contactanos!</h4>
+        <p>De lunes A viernes de 06 a 19 hrs.</p>
+        <p>Centro de Atención al Cliente:</p>
+        <a href="toCall:0810-666-4444"> <span class="material-symbols-outlined">
+            call
+          </span> 0810-666-4444</a>
+        <!-- <p>Denuncias Mastercard (crédito)</p>
+            <a href=""> <span class="material-symbols-outlined">
+                    call
+                </span> (011) 4340-5500</a> -->
+        <p>Acercate A Nuestra Sucursal:</p>
+        <a href=""> <span class="material-symbols-outlined">
+            location_on
+          </span> Rivadavia 789 CABA</a>
+        <p>Envienos Un Email!!</p>
+        <a href=""> <span class="material-symbols-outlined">
+            mail
+          </span> HomeBanking@gmail.com.ar</a>
+      </div>
+      <div class="box">
+        <h4>Informacion Legal</h4>
+        <p>Entra al Inicio para Ver mas </p>
+      </div>
+      <div class="box boxForm">
+        <h4>¡Suscribete!</h4>
+        <p>Enterate de todas las novedades y beneficios que tenemos para vos.</p>
+      </div>
+    </div>
+    <div class="grupo2">
+      <small>©CopyRight; 2022 <b>MindHub Brother's</b> - Todos Derechos Reservados.</small>
+      <div>
+        <a href="#"><span class="material-symbols-outlined">
+            arrow_upward
+          </span>Volver Arriba<span class="material-symbols-outlined">
+            arrow_upward
+          </span> </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="transfer.js"></script>
+</body>
+
+</html>
